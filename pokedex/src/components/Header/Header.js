@@ -38,14 +38,15 @@ const Header = () => {
                 </S.Column>
                 <S.Column>
                 {!userLogget.isLogged ? ( 
-                        <>
+                        <S.Align>
                             <S.Input type="text" placeholder='Name' onChange={(e) => setName(e.target.value)}/>
-                            <button onClick={handleLogin}>Login</button>
-                        </>
+                            <S.Button onClick={handleLogin}>Login</S.Button>
+                        </S.Align>
                     ) : (
-                        <>
-                            <button onClick={handleLogout}>Sair</button>
-                        </>
+                        <S.Align>
+                            {userLogget.user}
+                            <S.Button onClick={handleLogout}>Sair</S.Button>
+                        </S.Align>
                     )}
                 </S.Column>
             </S.SideSpaces>

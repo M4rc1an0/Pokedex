@@ -9,11 +9,30 @@ export const Container = styled.div`
 
 export const SideSpaces = styled.div`
     display: flex;
-    justify-content: space-around;
-    padding: 10px;
+    height: 100%;
+    justify-content: space-between;
+    padding: 0 150px;
 `
 
 export const Column = styled.div`
+    height: 100%;
+    display: flex;
+    align-items: center;
+`
+
+export const Align = styled.div`
+    height: 100%;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+`
+
+export const Button = styled.button`
+    background: #2596be;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
 `
 
 export const ImgLogo = styled.img`
@@ -21,8 +40,7 @@ export const ImgLogo = styled.img`
 `
 
 export const Input = styled.input`
-    padding: 0 5px;
+    padding: 5px;
     border: none;
-    border-bottom: 2px solid #000;
     outline: none;
 `
