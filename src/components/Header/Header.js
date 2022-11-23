@@ -11,9 +11,6 @@ const Header = () => {
 
     const [name, setName] = useState('')
     const [userLogget, setUserLogged] = useState(user)
-
-    
-    console.log(userLogget, 'USER')
   
     const handleLogin = () => {
       dispatch(changeUser(name))
@@ -33,9 +30,7 @@ const Header = () => {
                 <S.Column>
                     <S.ImgLogo src='./pokemon.png'/>
                 </S.Column>
-                <S.Column>
 
-                </S.Column>
                 <S.Column>
                 {!userLogget.isLogged ? ( 
                         <S.Align>
