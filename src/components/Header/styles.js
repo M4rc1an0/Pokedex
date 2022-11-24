@@ -29,10 +29,18 @@ export const Align = styled.div`
 `
 
 export const Button = styled.button`
-    background: #2596be;
+    background: #ffcd02;
+    color: #286efe;
+    cursor: pointer;
     padding: 5px;
-    border: none;
+    border: 2px solid #286efe;
     border-radius: 5px;
+
+    :hover {
+        background: #ffcd02;
+        border: 1px solid #fff;
+        color: #fff;
+    }
 `
 
 export const ImgLogo = styled.img`

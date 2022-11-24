@@ -11,9 +11,9 @@ const Header = () => {
 
     const [name, setName] = useState('')
     const [userLogget, setUserLogged] = useState(user)
-  
+
     const handleLogin = () => {
-      dispatch(changeUser(name))
+        dispatch(changeUser(name))
     }
 
     const handleLogout = () => {
@@ -28,11 +28,11 @@ const Header = () => {
         <S.Container>
             <S.SideSpaces>
                 <S.Column>
-                    <S.ImgLogo src='./pokemon.png'/>
+                    <S.ImgLogo src='./pokemon.png' />
                 </S.Column>
 
                 <S.Column>
-                {!userLogget.isLogged ? ( 
+                    {/* {!userLogget.isLogged ? ( 
                         <S.Align>
                             <S.Input type="text" placeholder='Name' onChange={(e) => setName(e.target.value)}/>
                             <S.Button onClick={handleLogin}>Login</S.Button>
@@ -42,7 +42,11 @@ const Header = () => {
                             {userLogget.user}
                             <S.Button onClick={handleLogout}>Sair</S.Button>
                         </S.Align>
-                    )}
+                    )} */}
+                    <S.Align>
+                        <S.Input type="text" placeholder='Pokemon' onChange={(e) => setName(e.target.value)} />
+                        <S.Button onClick={() => {}}>Pesquisar</S.Button>
+                    </S.Align>
                 </S.Column>
             </S.SideSpaces>
         </S.Container>

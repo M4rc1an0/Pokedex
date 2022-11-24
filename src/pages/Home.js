@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Header from '../components/Header/Header'
-import './Home.css';
+import * as S from './styles'
 
 export const Home = () => {
     const [listPokemon, setListPokemon] = useState()
@@ -19,17 +19,18 @@ export const Home = () => {
     console.log(listPokemon, 'LISTA DE POKEMONS')
 
     return (
-        <div>
+        <S.Container>
             <Header />
-            <div className="container">
-                {listPokemon.map((pokemon, index) => {
+            <S.ListPokemons>
+                {listPokemon && listPokemon.map((pokemon, index) => {
                     return (
-                        <div className="contentName">
-                            {pokemon.name}
-                        </div>
+                        <S.Button>
+                            <S.ImgPokebola src='./pokebola.png'/>
+                            <S.Paragraph>{pokemon.name}</S.Paragraph>
+                        </S.Button>
                     )
                 })}
-            </div>
-        </div>
+            </S.ListPokemons>
+        </S.Container>
     )
 }
