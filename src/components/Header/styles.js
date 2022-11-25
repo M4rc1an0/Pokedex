@@ -11,7 +11,7 @@ export const SideSpaces = styled.div`
     display: flex;
     height: 100%;
     justify-content: space-between;
-    padding: 0 150px;
+    padding: 0 100px;
 `
 
 export const Column = styled.div`
