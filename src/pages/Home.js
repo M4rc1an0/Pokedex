@@ -31,6 +31,8 @@ export const Home = () => {
             })
     }
 
+    console.log(statsPokemon, 'INFORMAÇÕES POKEMON')
+
     return (
         <>
             <S.Container>
@@ -48,8 +50,8 @@ export const Home = () => {
                 <S.ListPokemons>
                     {listPokemon && listPokemon.map((pokemon, index) => {
                         return (
-                            <S.Button key={index}>
-                                <S.ImgPokebola src='./pokebola.png' />
+                            <S.Button background={''} onClick={() => searchPokemon(pokemon.name)} key={index}>
+                                {statsPokemon && statsPokemon.name !== pokemon.name ? <S.ImgPokebola src='./pokebola.png' /> : <S.ImgPokemon src='./pokebola.png' />}
                                 <S.Paragraph>{pokemon.name}</S.Paragraph>
                             </S.Button>
                         )

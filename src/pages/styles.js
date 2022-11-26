@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-
 `
 
 export const ListPokemons = styled.div`
@@ -19,6 +18,13 @@ export const Button = styled.button`
     align-items: center;
     cursor: pointer;
     background-color: #c3cad7;
+    box-shadow:10px 10px 20px #888;
+    border: none;
+    border-radius: 5px;
+
+    /* :hover {
+        background-image: ${(props) => props.background ? props.background : "#fff"};;
+    } */
 `
 
 export const Paragraph = styled.p`
@@ -27,16 +33,18 @@ export const Paragraph = styled.p`
     padding: 5px 0;
     font-size: 24px;
     border-radius: 5px;
-    font-weight: bold;
 
     ::first-letter {
         text-transform: uppercase;
-        font-size: 30px;
-        font-weight: bold;
+        font-size: 26px;
     }
 `
 
 export const ImgPokebola = styled.img`
+    width: 100px;
+`
+
+export const ImgPokemon = styled.img`
     width: 100px;
 `
 
@@ -55,17 +63,16 @@ export const Align = styled.div`
 `
 
 export const ButtonS = styled.button`
-    background: #ffcd02;
-    color: #286efe;
+    background: #66bb6a;
+    color: #fff;
     cursor: pointer;
     padding: 5px;
-    border: 2px solid #286efe;
+    border: none;
+
     border-radius: 5px;
 
     :hover {
-        background: #ffcd02;
-        border: 1px solid #fff;
-        color: #fff;
+
     }
 `
 
@@ -74,7 +81,20 @@ export const ImgLogo = styled.img`
 `
 
 export const Input = styled.input`
-    padding: 5px;
-    border: none;
-    outline: none;
+  background: #fff;
+  color: #525865;
+  border-radius: 4px;
+  border: 1px solid #d1d1d1;
+  line-height: 1.45;
+  outline: none;
+  padding: 5px;
+
+    :hover {
+        box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.02);    
+    }
+    :focus {
+        color: #4b515d;
+        border: 1px solid #B8B6B6;
+        box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
+    }
 `

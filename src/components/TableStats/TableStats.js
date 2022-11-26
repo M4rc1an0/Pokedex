@@ -1,11 +1,15 @@
 import * as S from './styles'
 
 const TableStats = ({info}) => {
-    console.log(info,  'INFORMAÇÕES')
+
     return (
         <S.Content>
             <S.Info>
-                {info.name}
+                <S.ImgPokemon src={info.sprites.other.dream_world.front_default}/>
+                <S.ParagraphName>{info.name}</S.ParagraphName>
+            </S.Info>
+            <S.Info>
+
             </S.Info>
         </S.Content>
     )
