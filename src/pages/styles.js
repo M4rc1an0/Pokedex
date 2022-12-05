@@ -7,6 +7,7 @@ export const ListPokemons = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 50px;
 `
 
 export const Button = styled.button`
@@ -22,9 +23,9 @@ export const Button = styled.button`
     border: none;
     border-radius: 5px;
 
-    /* :hover {
-        background-image: ${(props) => props.background ? props.background : "#fff"};;
-    } */
+    :hover {
+        background: ${(props) => props.background ? props.background : "red"};
+    }
 `
 
 export const Paragraph = styled.p`
@@ -67,8 +68,8 @@ export const ButtonS = styled.button`
     color: #fff;
     cursor: pointer;
     padding: 5px;
+    margin: 5px;
     border: none;
-
     border-radius: 5px;
 
     :hover {
@@ -88,6 +89,7 @@ export const Input = styled.input`
   line-height: 1.45;
   outline: none;
   padding: 5px;
+  margin: 5px;
 
     :hover {
         box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.02);    

@@ -31,8 +31,6 @@ export const Home = () => {
             })
     }
 
-    console.log(statsPokemon, 'INFORMAÇÕES POKEMON')
-
     return (
         <>
             <S.Container>
@@ -50,8 +48,10 @@ export const Home = () => {
                 <S.ListPokemons>
                     {listPokemon && listPokemon.map((pokemon, index) => {
                         return (
-                            <S.Button background={''} onClick={() => searchPokemon(pokemon.name)} key={index}>
-                                {statsPokemon && statsPokemon.name !== pokemon.name ? <S.ImgPokebola src='./pokebola.png' /> : <S.ImgPokemon src='./pokebola.png' />}
+                            <S.Button background='#fff' onClick={() => searchPokemon(pokemon.name)} key={index}>
+                                {statsPokemon &&
+                                    <S.ImgPokemon src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png`} />
+                                }
                                 <S.Paragraph>{pokemon.name}</S.Paragraph>
                             </S.Button>
                         )
@@ -60,7 +60,7 @@ export const Home = () => {
             </S.Container>
             {isOpen && statsPokemon &&
                 <Modal action={() => setIsOpen(false)}>
-                    <TableStats info={statsPokemon}/>
+                    <TableStats info={statsPokemon} />
                 </Modal>
             }
         </>

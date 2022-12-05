@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-// const typePokemon = (props) => {
-//     if(props.background === 'fire') {
-//         return {
-//             backgroundType: '#e0792f'
-//         }
-//     }
-// }
+const typePokemon = (props) => {
+    if(props.background === 'fire') {
+        return {
+            backgroundType: '#e0792f'
+        }
+    }
+}
 
 export const Content = styled.div`
     display: flex;
@@ -16,7 +16,7 @@ export const Content = styled.div`
 
 export const Info = styled.div`
     width: 50%;
-    background: #fff;
+    background: ${(props) => typePokemon(props)?.backgroundType ? typePokemon(props)?.backgroundType : "#fff"};
 
     display: flex;
     flex-direction: column;
@@ -48,5 +48,5 @@ export const Li = styled.div`
 `
 
 export const ImgPokemon = styled.img`
-    width: 200px;
+    width: 50%;
 `
