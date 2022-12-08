@@ -4,10 +4,10 @@ const typePokemon = (props) => {
     switch (props.background) {
         case 'fire': return { backgroundType: '#b12327' };
         case 'dragon': return { backgroundType: '#ffae00' };
-        case 'bug': return { backgroundType: '#bee3f3' };
+        case 'bug': return { backgroundType: '#95cde6' };
         case 'dark': return { backgroundType: '#333333' };
         case 'electric': return { backgroundType: '#eed321' };
-        case 'fairy': return { backgroundType: '#f9b4e0' };
+        case 'fairy': return { backgroundType: '#f799d5' };
         case 'fighting': return { backgroundType: '#d17d30' };
         case 'flying': return { backgroundType: '#d9dee0' };
         case 'ghost': return { backgroundType: '#660066' };
@@ -42,7 +42,7 @@ export const Info = styled.div`
 `
 
 export const Stats = styled.div`
-    padding: 10px;
+    padding: 0 30px;
     width: 50%;
     border-radius: 10px;
     background: ${(props) => typePokemon(props)?.backgroundType ? typePokemon(props)?.backgroundType : "#fff"};
@@ -63,10 +63,19 @@ export const StatsPokemon = styled.div`
     font-size: 20px;
     font-weight: bold;
     margin-right: 5px;
+
+    ::first-letter {
+        text-transform: uppercase;
+    }
+`
+
+export const ContentStats = styled.div`
+    width: 100%;
+    margin: 5px 0;
 `
 
 export const ParagraphName = styled.div`
-    padding: 20px;
+    padding: 0 20px;
     font-size: 20px;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
@@ -90,6 +99,7 @@ export const IconLeave = styled.div`
 
 export const Ul = styled.ul`
     padding: 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -132,5 +142,5 @@ export const InfoContent = styled.div`
 `
 
 export const ImgPokemon = styled.img`
-    width: 150px;
+    width: 250px;
 `
