@@ -1,13 +1,12 @@
 import * as S from './styles'
 
-const Header = ({children}) => {
+const Header = ({ children }) => {
     return (
         <S.Container>
             <S.SideSpaces>
                 {children}
             </S.SideSpaces>
         </S.Container>
-
     )
 }
 

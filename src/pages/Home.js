@@ -67,7 +67,7 @@ export const Home = () => {
             <S.Container>
                 <Header>
                     <S.Column>
-                        <S.ImgLogo src='./pokemon.png' />
+                        <S.ImgLogo src='./pokemon.png' alt='pokemon' />
                     </S.Column>
                     <S.Column>
                         <S.Align>
@@ -79,14 +79,14 @@ export const Home = () => {
                 <S.ListPokemons>
                     {listPokemon && listPokemon.map((pokemon, index) => {
                         return (
-                            <Card info={pokemon.name} image={'./pokebola.png'} action={() => {searchPokemon(pokemon.name, index)}}/>
+                            <Card info={pokemon.name} image={'./pokebola.png'} action={() => { searchPokemon(pokemon.name, index) }} />
                         )
                     })}
                 </S.ListPokemons>
             </S.Container>
             {isOpen && statsPokemon &&
                 <Modal>
-                    <TableStats info={statsPokemon} close={() => setIsOpen(false)}/>
+                    <TableStats info={statsPokemon} close={() => setIsOpen(false)} />
                 </Modal>
             }
         </>

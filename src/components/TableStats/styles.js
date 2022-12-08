@@ -1,25 +1,26 @@
 import styled from "styled-components";
 
 const typePokemon = (props) => {
-    switch (props.background)  {
-        case 'fire': return {backgroundType: '#b12327'};
-        case 'dragon': return {backgroundType: '#ffae00'};
-        case 'bug': return {backgroundType: '#bee3f3'};
-        case 'dark': return {backgroundType: '#333333'};
-        case 'electric': return {backgroundType: '#eed321'};
-        case 'fairy': return {backgroundType: '#f9b4e0'};
-        case 'fighting': return {backgroundType: '#d17d30'};
-        case 'flying': return {backgroundType: '#d9dee0'};
-        case 'ghost': return {backgroundType: '#660066'};
-        case 'grass': return {backgroundType: '#669933'};
-        case 'ground': return {backgroundType: '#9f6411'};
-        case 'ice': return {backgroundType: '#bee3f3'};
-        case 'normal': return {backgroundType: '#bfa38a'};
-        case 'poison': return {backgroundType: '#ab00ba'};
-        case 'psychic': return {backgroundType: '#d837e6'};
-        case 'rock': return {backgroundType: '#797979'};
-        case 'steel': return {backgroundType: '#999999'};
-        case 'water': return {backgroundType: '#20afed'};
+    switch (props.background) {
+        case 'fire': return { backgroundType: '#b12327' };
+        case 'dragon': return { backgroundType: '#ffae00' };
+        case 'bug': return { backgroundType: '#bee3f3' };
+        case 'dark': return { backgroundType: '#333333' };
+        case 'electric': return { backgroundType: '#eed321' };
+        case 'fairy': return { backgroundType: '#f9b4e0' };
+        case 'fighting': return { backgroundType: '#d17d30' };
+        case 'flying': return { backgroundType: '#d9dee0' };
+        case 'ghost': return { backgroundType: '#660066' };
+        case 'grass': return { backgroundType: '#669933' };
+        case 'ground': return { backgroundType: '#9f6411' };
+        case 'ice': return { backgroundType: '#bee3f3' };
+        case 'normal': return { backgroundType: '#bfa38a' };
+        case 'poison': return { backgroundType: '#ab00ba' };
+        case 'psychic': return { backgroundType: '#d837e6' };
+        case 'rock': return { backgroundType: '#797979' };
+        case 'steel': return { backgroundType: '#999999' };
+        case 'water': return { backgroundType: '#20afed' };
+        default: return { backgroundType: '#fff' }
     }
 }
 
@@ -31,7 +32,7 @@ export const Content = styled.div`
 
 export const Info = styled.div`
     width: 50%;
-    border-radius: 10px;
+    border-radius: 5px;
     background: ${(props) => typePokemon(props)?.backgroundType ? typePokemon(props)?.backgroundType : "#fff"};
 
     display: flex;
@@ -41,6 +42,7 @@ export const Info = styled.div`
 `
 
 export const Stats = styled.div`
+    padding: 10px;
     width: 50%;
     border-radius: 10px;
     background: ${(props) => typePokemon(props)?.backgroundType ? typePokemon(props)?.backgroundType : "#fff"};
@@ -86,21 +88,44 @@ export const IconLeave = styled.div`
     cursor: pointer;
 `
 
-export const Ul = styled.div`
+export const Ul = styled.ul`
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 `
 
-export const Li = styled.div`
+export const Li = styled.li`
     display: flex;
     margin: 5px 0;
+    list-style: none;
 `
 
-export const typeContent = styled.div`
+export const LiAbilities = styled.li`
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 5px 0;
+    list-style: none;
+`
+
+export const TypeContent = styled.div`
     padding: 5px 10px;
-    color: #fff;
+    font-weight: 600;
+    color: ${(props) => typePokemon(props)?.backgroundType ? "#fff" : "#000"};
     background: ${(props) => typePokemon(props)?.backgroundType ? typePokemon(props)?.backgroundType : "#fff"};
+    
+    ::first-letter {
+        text-transform: uppercase;
+    }
+`
+
+export const InfoContent = styled.div`
+    margin: 5px 5px 5px 0;
+    padding: 5px 10px;
+    background: #CCCCCC;
+    border-radius: 5px;
+
     ::first-letter {
         text-transform: uppercase;
     }
