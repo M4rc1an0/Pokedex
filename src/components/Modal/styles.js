@@ -14,7 +14,6 @@ export const OpacityModal = styled.div`
 `
 
 export const Modal = styled.div`
-    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;

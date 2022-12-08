@@ -5,7 +5,6 @@ const Modal = ({ children, action }) => {
         <S.OpacityModal>
             <S.Modal>
                     {children}
-                <S.ButtonS onClick={action}>fechar</S.ButtonS>
             </S.Modal>
         </S.OpacityModal>
     )

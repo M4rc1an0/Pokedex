@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Card from "../components/Cards/Cards";
 import Header from '../components/Header/Header'
 import Modal from "../components/Modal/Modal";
 import TableStats from "../components/TableStats/TableStats";
@@ -9,6 +10,9 @@ export const Home = () => {
     const [listPokemon, setListPokemon] = useState()
     const [namePokemon, setNamePokemon] = useState('')
     const [statsPokemon, setStatsPokemon] = useState()
+    // const [img, setImg] = useState()
+    // const [idValidate, setIdValidate] = useState()
+    // const [check, setCheck] = useState(0)
     const [isOpen, setIsOpen] = useState(false)
 
     useEffect(() => {
@@ -20,6 +24,33 @@ export const Home = () => {
                 setListPokemon(preview.data.results)
             });
     }, []);
+
+    // const searchPokemon = (pokemon, id) => {
+    //     console.log(id, 'ID')
+    //     console.log(idValidate, 'VALIDAÇÃO')
+    //     setIdValidate(id)
+    //     if (check === 0) {
+    //         setCheck(1)
+    //         axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+    //             .then((stats) => {
+    //                 setImg(stats.data.sprites.back_default)
+    //                 setIdValidate(id)
+    //                 console.log(idValidate, 'DEPOIS DISPAARADO')
+    //             }).catch(() => {
+    //                 console.log('ERRO REQUISIÇÃO IMAGEM')
+    //             })
+    //     } 
+    //     if (id === idValidate) {
+    //         axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
+    //             .then((stats) => {
+    //                 setStatsPokemon(stats.data)
+    //                 setIsOpen(true)
+    //             }).catch(() => {
+    //                 console.log('ERRO AQUI')
+    //             })
+    //             setCheck(0)
+    //     }
+    // }
 
     const searchPokemon = (pokemon) => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
@@ -48,19 +79,14 @@ export const Home = () => {
                 <S.ListPokemons>
                     {listPokemon && listPokemon.map((pokemon, index) => {
                         return (
-                            <S.Button background='#fff' onClick={() => searchPokemon(pokemon.name)} key={index}>
-                                {statsPokemon &&
-                                    <S.ImgPokemon src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png`} />
-                                }
-                                <S.Paragraph>{pokemon.name}</S.Paragraph>
-                            </S.Button>
+                            <Card info={pokemon.name} image={'./pokebola.png'} action={() => {searchPokemon(pokemon.name, index)}}/>
                         )
                     })}
                 </S.ListPokemons>
             </S.Container>
             {isOpen && statsPokemon &&
-                <Modal action={() => setIsOpen(false)}>
-                    <TableStats info={statsPokemon} />
+                <Modal>
+                    <TableStats info={statsPokemon} close={() => setIsOpen(false)}/>
                 </Modal>
             }
         </>
