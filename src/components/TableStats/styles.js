@@ -69,6 +69,11 @@ export const StatsPokemon = styled.div`
     }
 `
 
+export const ContentProgressStats = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
 export const ContentStats = styled.div`
     width: 100%;
     margin: 5px 0;
@@ -102,7 +107,7 @@ export const Ul = styled.ul`
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 `
 
 export const Li = styled.li`

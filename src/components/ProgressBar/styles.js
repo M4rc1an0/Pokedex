@@ -31,14 +31,14 @@ export const Container = styled.div`
 
 export const ContentProgress = styled.div`
     height: 15px;
-    width: 100%;
+    width: 200px;
     background: #ccc;
     border-radius: 10px;
 `
 
 export const ValueStats = styled.div`
     height: 100%;
-    width: ${(props) => props.progress ? `${props.progress}%` : '1%'};
+    width: ${(props) => props.progress ? `${props.progress}px` : '1%'};
     background: ${(props) => typePokemon(props)?.backgroundType ? typePokemon(props)?.backgroundType : "#fff"};
     border-radius: 10px;
 `

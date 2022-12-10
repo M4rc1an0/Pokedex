@@ -3,6 +3,7 @@ import ProgressBar from '../ProgressBar/ProgressBar'
 import Close from '../../assets/icons/close'
 
 const TableStats = ({ info, close }) => {
+    console.log(info)
     return (
         <S.Content>
             <S.Info background={info.types[0]?.type.name}>
@@ -18,17 +19,16 @@ const TableStats = ({ info, close }) => {
                         <S.StatsPokemon>Tipo:</S.StatsPokemon>
                         <S.TypeContent background={info.types[0]?.type.name}>{info.types[0]?.type.name}</S.TypeContent>
                     </S.Li>
-
-                    {info.stats.map(stats => {
-                        console.log(stats, 'STATUS')
-                        return (
-                            <S.ContentStats>
-                                <S.StatsPokemon>{stats.stat.name}: </S.StatsPokemon>
-                                <ProgressBar value={stats.base_stat} color={info.types[0]?.type.name} />
-                            </S.ContentStats>
-                        )
-                    })}
-
+                    <S.ContentProgressStats>
+                        {info.stats.map(stats => {
+                            return (
+                                <S.ContentStats>
+                                    <S.StatsPokemon>{stats.stat.name}: </S.StatsPokemon>
+                                    <ProgressBar value={stats.base_stat} color={info.types[0]?.type.name} />
+                                </S.ContentStats>
+                            )
+                        })}
+                    </S.ContentProgressStats>
                     <S.StatsPokemon>Habilidades:</S.StatsPokemon>
                     <S.LiAbilities>
                         {info?.abilities.map(item => {
