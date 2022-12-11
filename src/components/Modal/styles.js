@@ -17,9 +17,8 @@ export const Modal = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 800px;
+    width: 100%;
     height: 600px;
-    border-radius: 10px;
     background-color: #fff;
     color: #000;
 `

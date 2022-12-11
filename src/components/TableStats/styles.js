@@ -32,7 +32,8 @@ export const Content = styled.div`
 
 export const Info = styled.div`
     width: 50%;
-    border-radius: 5px;
+    border-top-right-radius: 300px;
+    border-bottom-right-radius: 300px;
     background: ${(props) => typePokemon(props)?.backgroundType ? typePokemon(props)?.backgroundType : "#fff"};
 
     display: flex;
@@ -59,17 +60,18 @@ export const Paragraph = styled.div`
     }
 `
 
-export const StatsPokemon = styled.div`
+export const LiStatsPokemon = styled.li`
     font-size: 20px;
     font-weight: bold;
     margin-right: 5px;
+    list-style: none;
 
     ::first-letter {
         text-transform: uppercase;
     }
 `
 
-export const ContentProgressStats = styled.div`
+export const UlContent = styled.ul`
     display: flex;
     flex-direction: column;
 `
@@ -79,7 +81,7 @@ export const ContentStats = styled.div`
     margin: 5px 0;
 `
 
-export const ParagraphName = styled.div`
+export const LiParagraphName = styled.div`
     padding: 0 20px;
     font-size: 20px;
     font-weight: bold;
@@ -110,7 +112,7 @@ export const Ul = styled.ul`
     align-items: center;
 `
 
-export const Li = styled.li`
+export const Li = styled.div`
     display: flex;
     margin: 5px 0;
     list-style: none;
@@ -124,7 +126,7 @@ export const LiAbilities = styled.li`
     list-style: none;
 `
 
-export const TypeContent = styled.div`
+export const LiTypeContent = styled.li`
     padding: 5px 10px;
     font-weight: 600;
     color: ${(props) => typePokemon(props)?.backgroundType ? "#fff" : "#000"};

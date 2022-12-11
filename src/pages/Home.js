@@ -79,7 +79,7 @@ export const Home = () => {
                 <S.ListPokemons>
                     {listPokemon && listPokemon.map((pokemon, index) => {
                         return (
-                            <Card info={pokemon.name} image={'./pokebola.png'} action={() => { searchPokemon(pokemon.name, index) }} />
+                            <Card info={pokemon.name} image={'./pokebola.png'} action={() => { searchPokemon(pokemon.name, index) }} key={index}/>
                         )
                     })}
                 </S.ListPokemons>
