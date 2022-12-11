@@ -10,6 +10,7 @@ export const Paragraph = styled.p`
     padding: 5px 0;
     font-size: 24px;
     border-radius: 5px;
+    text-align: center;
 
     ::first-letter {
         text-transform: uppercase;
@@ -24,9 +25,9 @@ margin: 10px;
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: center;
 cursor: pointer;
-background-color: #c3cad7;
-box-shadow:10px 10px 20px #888;
+/* box-shadow:10px 10px 20px #888; */
 border: none;
 border-radius: 5px;
 
