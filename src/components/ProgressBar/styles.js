@@ -27,6 +27,9 @@ const typePokemon = (props) => {
 export const Container = styled.div`
     display: flex;
     width: 100%;
+    @media (max-width: 1024px) {
+        justify-content: center;
+    }
 `
 
 export const ContentProgress = styled.div`

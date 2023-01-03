@@ -6,6 +6,9 @@ const TableStats = ({ info, close }) => {
     return (
         <S.Content>
             <S.Info background={info.types[0]?.type.name}>
+                <S.LeavePokemonBackground>
+                    <S.IconLeaveBackground onClick={close}><Close color="#fff"/></S.IconLeaveBackground>
+                </S.LeavePokemonBackground>
                 <S.ImgPokemon src={info.sprites.other.dream_world.front_default} />
             </S.Info>
             <S.Stats>
@@ -23,7 +26,9 @@ const TableStats = ({ info, close }) => {
                             return (
                                 <S.ContentStats key={index}>
                                     <S.LiStatsPokemon>{stats.stat.name}: </S.LiStatsPokemon>
-                                    <ProgressBar value={stats.base_stat} color={info.types[0]?.type.name} />
+                                    <S.ContentProgress>
+                                        <ProgressBar value={stats.base_stat} color={info.types[0]?.type.name} />
+                                    </S.ContentProgress>
                                 </S.ContentStats>
                             )
                         })}

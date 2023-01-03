@@ -11,6 +11,7 @@ export const OpacityModal = styled.div`
     left: 0;
     z-index: 10;
     background-color: rgba(0,0,0,0.8);
+    overflow: scroll;
 `
 
 export const Modal = styled.div`
@@ -18,9 +19,16 @@ export const Modal = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 600px;
+    height: 650px;
     background-color: #fff;
     color: #000;
+
+    @media (max-width: 1024px) {
+        justify-content: center;
+        border-radius: 21px;
+        width: 95%;
+        height: 90%;
+    }
 `
 
 export const ButtonS = styled.button`

@@ -28,6 +28,10 @@ export const Content = styled.div`
     display: flex;
     width: 100%;
     height: 100%;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
 `
 
 export const Info = styled.div`
@@ -40,6 +44,14 @@ export const Info = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 1024px) {
+        width: 100%;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 0;
+        padding: 20px 0;
+    }
 `
 
 export const Stats = styled.div`
@@ -51,6 +63,11 @@ export const Stats = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: 1024px) {
+        width: 100%;
+        padding: 0;
+    }
 `
 
 export const Paragraph = styled.div`
@@ -74,11 +91,38 @@ export const LiStatsPokemon = styled.li`
 export const UlContent = styled.ul`
     display: flex;
     flex-direction: column;
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            padding: 20px;
+            align-items: center;
+        }
 `
 
 export const ContentStats = styled.div`
     width: 100%;
     margin: 5px 0;
+
+    @media (max-width: 1024px) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+`
+
+export const ContentProgress = styled.div`
+    width: 100%;
+    margin: 5px 0;
+    
+    @media (max-width: 1024px) {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
 `
 
 export const LiParagraphName = styled.div`
@@ -96,10 +140,30 @@ export const LeavePokemon = styled.div`
     display: flex;
     justify-content: flex-end;
     width: 100%;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
+`
+
+export const LeavePokemonBackground = styled.div`
+    display: none;
+    justify-content: flex-end;
+    width: 100%;
+
+    @media (max-width: 1024px) {
+        display: flex;
+    }
 `
 
 export const IconLeave = styled.div`
     padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+`
+
+export const IconLeaveBackground = styled.div`
+    padding: 0 20px 0 20px;
     font-weight: bold;
     cursor: pointer;
 `
@@ -110,6 +174,10 @@ export const Ul = styled.ul`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: 1024px) {
+        width: 100%;
+    }
 `
 
 export const Li = styled.div`
